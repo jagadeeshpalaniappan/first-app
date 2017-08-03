@@ -1,0 +1,75 @@
+<h1>Hello Angular ( {{angularVersion}} )</h1>
+
+<h1> Oneway Binding </h1>
+
+<h3> 1. String Interpolation :</h3>
+<div class="content">
+
+  <p> myStr: {{myStr}} </p>
+  <p> getMyStrFn(): {{getMyStrFn()}} </p>
+  <p> Exp: 3+2 is: {{3+2}} </p>
+
+  <p>------------------------------------</p>
+  <!-- WRONG: String Interpolation Examples -->
+  <!-- INSTEAD USE: 2. Property Binding -->
+  <p>myStr:
+    <input type="text" value="{{myStr}}" />
+  </p>
+
+
+  <p> myObj: {{myObj}} </p>
+  <p> myArr: {{myArr}} </p>
+
+  <!-- custom component -->
+
+  <jcomponent1 prop1Str="{{myStr}}" prop2Str="{{myStr}}" prop3Obj="{{myObj}}" prop4Arr="{{myArr}}"></jcomponent1>
+
+
+</div>
+
+<!-- ------------------------------------------------------------------------ -->
+
+<h3>2. Property Binding :</h3>
+
+<div class="content">
+
+  <p>
+    <input type="text" [value]="myStr" />
+  </p>
+  <p>--or--</p>
+  <p>
+    <input type="text" bind-value="myStr" />
+  </p>
+
+  <!-- custom component:: property binding -->
+  <jcomponent1 [prop1Str]="myStr" [prop2Str]="myStr" [prop3Obj]="myObj" [prop4Arr]="myArr"></jcomponent1>
+
+
+</div>
+
+<!-- ------------------------------------------------------------------------ -->
+
+<h3>3. Event Binding :</h3>
+
+<div class="content">
+
+  <p>myStr1: {{myStr1}}</p>
+  <p>
+    <input type="text" [value]="myStr" (input)="myInputEventFired($event)" />
+    <button (click)="btnClickEventFired()">Reset</button>
+  </p>
+  <p>--or---</p>
+  <p>
+    <input type="text" [value]="myStr" on-input="myInputEventFired($event)" />
+    <button on-click="btnClickEventFired()">Reset</button>
+  </p>
+
+  <p>------------------------------------</p>
+
+  <!-- custom component event binding -->
+  <p>myNumbr1: {{myNumbr1}}</p>
+
+  <jcomponent2-counter [myVal]="myNumbr1" (myValChangeEvent)="myValChangeEventFired($event)"></jcomponent2-counter>
+
+
+</div>
