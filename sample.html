@@ -22,7 +22,10 @@
 
   <!-- custom component -->
 
-  <jcomponent1 prop1Str="{{myStr}}" prop2Str="{{myStr}}" prop3Obj="{{myObj}}" prop4Arr="{{myArr}}"></jcomponent1>
+  <jcomponent1 prop1Str="{{myStr}}" 
+               prop2Str="{{myStr}}" 
+               prop3Obj="{{myObj}}" 
+               prop4Arr="{{myArr}}"></jcomponent1>
 
 
 </div>
@@ -42,7 +45,10 @@
   </p>
 
   <!-- custom component:: property binding -->
-  <jcomponent1 [prop1Str]="myStr" [prop2Str]="myStr" [prop3Obj]="myObj" [prop4Arr]="myArr"></jcomponent1>
+  <jcomponent1 [prop1Str]="myStr" 
+               [prop2Str]="myStr" 
+               [prop3Obj]="myObj" 
+               [prop4Arr]="myArr"></jcomponent1>
 
 
 </div>
@@ -55,12 +61,14 @@
 
   <p>myStr1: {{myStr1}}</p>
   <p>
-    <input type="text" [value]="myStr" (input)="myInputEventFired($event)" />
+    <input type="text" [value]="myStr" 
+                       (input)="myInputEventFired($event)" />
     <button (click)="btnClickEventFired()">Reset</button>
   </p>
   <p>--or---</p>
   <p>
-    <input type="text" [value]="myStr" on-input="myInputEventFired($event)" />
+    <input type="text" [value]="myStr" 
+                       on-input="myInputEventFired($event)" />
     <button on-click="btnClickEventFired()">Reset</button>
   </p>
 
