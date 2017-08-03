@@ -134,8 +134,7 @@ export class AppComponent {
 //------------------------
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home',  component: OnewayBindingComponent },
+  { path: '', redirectTo: '/page1', pathMatch: 'full' },
   { path: 'page1', component: OnewayBindingComponent },
   { path: 'page2', component: TwowayBindingComponent }
 ];
